@@ -51,7 +51,7 @@ async function msgHandler (client, message) {
         const { pushname } = sender
         const { formattedTitle } = chat
         const time = moment(t * 1000).format('DD/MM HH:mm:ss')
-        const commands = ['#menu','#help','#sticker', '#stiker', '#tiktok', '#ig', '#instagram', '#twt', '#twitter', '#fb', '#facebook']
+        const commands = ['#menu', '#help', 'quotes', 'assalamualaikum', 'P', 'thul', 'tul', 'hai', 'hallo', 'hi', 'halo', 'bot', 'selamat pagi', 'pagi', 'selamat siang', 'siang', 'selamat malam', 'malam', 'makasi', 'makasih', 'thanks', 'maacii', 'mas', 'mbak', 'mba', 'dek']
         const cmds = commands.map(x => x + '\\b').join('|')
         const cmd = type === 'chat' ? body.match(new RegExp(cmds, 'gi')) : type === 'image' && caption ? caption.match(new RegExp(cmds, 'gi')) : ''
 
@@ -63,7 +63,46 @@ async function msgHandler (client, message) {
             switch (cmd[0]) {
                 case '#menu':
                 case '#help':
-                    client.sendText(from, 'Menu: \n1. #sticker / #stiker: kirim gambar dengan caption atau balas gambar yang sudah dikirim. \n2. #sticker / #stiker spasi url gambar (contoh: #stiker https://avatars2.githubusercontent.com/u/24309806) \n3. #tiktok spasi url (contoh: #tiktok https://www.tiktok.com/@yogaGanteng/video/685521...)')
+                    client.sendText(from, 'ngapain?')
+                    break
+                 case 'assalamualaikum':
+                    client.sendText(from, 'waalaikumsalam wr. wb.')
+                    break
+                case 'quotes':
+                    client.sendText(from, randomline('status.txt'))
+                case 'P':
+                    client.sendText(from, 'bisa sopan dikit gak?')
+                    break
+                case 'hai':
+                case 'hi':
+                    client.sendText(from, 'hallo')
+                    break
+                case 'halo':
+                case 'hallo':
+                    client.sendText(from, 'hi')
+                    break
+                case 'thul':
+                case 'tul':
+                case 'mas':
+                case 'mbak':
+                case 'mba':
+                case 'dek':
+                    client.sendText(from, 'dalem')
+                    break
+                case 'selamat pagi':
+                    client.sendText(from, 'selamat pagi')
+                    break
+                case 'selamat siang':
+                    client.sendText(from, 'selamat siang')
+                    break
+                case 'selamat malam':
+                    client.sendText(from, 'selamat malam')
+                    break
+                case 'makasi':
+                case 'makasih':
+                case 'thanks':
+                case 'maacii':
+                    client.sendText(from, 'sama sama')
                     break
                 case '#sticker':
                 case '#stiker':
