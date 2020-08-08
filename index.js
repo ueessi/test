@@ -52,7 +52,7 @@ async function msgHandler (client, message) {
         const time = moment(t * 1000).format('DD/MM HH:mm:ss')
         const commands = ['quotes', 'assalamualaikum', 'P', 'thul', 'tul', 'hai', 'hallo', 'hi', 'halo', 'bot', 'selamat pagi', 'pagi', 'selamat siang', 'siang', 'selamat malam', 'malam', 'makasi', 'makasih', 'thanks', 'maacii', 'mas', 'mbak', 'mba', 'dek']
         const cmds = commands.map(x => x + '\\b').join('|'),
-        const cmd = type === 'chat' ? body.match(new RegExp(cmds, 'gi')) : type === 'image' && caption ? caption.match(new RegExp(cmds, 'gi')) : ''
+        const cmd = type === 'chat' ? body.match(new RegExp(cmds, 'gi')) : ''
 
         if (cmd) {
             if (!isGroupMsg) console.log(color('[EXEC]'), color(time, 'yellow'), color(cmd[0]), 'from', color(pushname))
